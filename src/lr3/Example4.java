@@ -2,15 +2,19 @@ package lr3;
 
 public class Example4 {
     public static void main(String[] args) {
-        System.out.println(fact(5));
-    }
+        Node node0 = new Node(0, null);
+        Node node1 = new Node(1, null);
+        Node node2 = new Node(2, null);
+        Node node3 = new Node(3, null);
 
-    public static int fact(int n) {
-        int result;
-        if (n == 1) return 1;
-        else {
-            result = fact(n - 1) * n;
-            return result;
+        node0.setNext(node1);
+        node1.setNext(node2);
+        node2.setNext(node3);
+
+        Node ref = node0;
+        while (ref != null) {
+            System.out.println(" " + ref.getValue());
+            ref = ref.getNext();
         }
     }
 }

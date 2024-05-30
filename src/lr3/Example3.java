@@ -1,28 +1,18 @@
 package lr3;
 
+import java.util.Arrays;
+
 public class Example3 {
-    private static int step = 0;
-
-    public static void m(int x) {
-        space();
-        System.out.println("" + x + "-> ");
-        step++;
-        int xDelta = 2 * x + 1;
-        if (xDelta < 20) {
-            m(xDelta);
-        }
-        step--;
-        space();
-        System.out.println("" + x + " <-");
-    }
-
-    public static void space() {
-        for (int i = 0; i < step; i++) {
-            System.out.println(" ");
-        }
-    }
-
     public static void main(String[] args) {
-        m(1);
+        int[] src = new int[] {1, 2, 3, 4, 5}; 
+        forRecursion(src);
+	}
+
+    private static void forRecursion(int[] numbers) {
+        if (numbers.length == 0) return;
+        int number = numbers[0];
+        System.out.println(number);
+        int sub_numbers[] = Arrays.copyOfRange(numbers, 1, numbers.length);
+        forRecursion(sub_numbers);
     }
 }

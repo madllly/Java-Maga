@@ -12,7 +12,7 @@ public class Example_3 {
     }
     
     private static List<String> filterByOnlyUpperCase(List<String> tokens) {
-        return tokens.stream().filter(token -> Character.isUpperCase(token.charAt(0))).toList(); 
+        return eam().filter(token -> Character.isUpperCase(token.charAt(0))).toList); 
     }
 
 }
